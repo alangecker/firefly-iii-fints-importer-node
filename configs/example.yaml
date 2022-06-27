@@ -1,0 +1,22 @@
+accounts:
+  - name: gls-johanna
+    bank_username: Johanna4000
+    bank_password: "a98duqojdado"
+    bank_url: https://hbci-pintan.gad.de/cgi-bin/hbciservlet
+    bank_code: "43060967" # GLS Gemeinschaftsbank eG
+    bank_iban: DE58430609671220123300
+    firefly_url: https://myfirefly.iii
+    firefly_access_token: eXamPleAcCessT0kenSecur3
+    firefly_account_id: 148
+
+  - name: dkb-charlie
+    bank_username: "9124667669323736"
+    bank_password: "9d98u2e98aydaydwud"
+    bank_url: https://banking-dkb.s-fints-pt-dkb.de/fints30
+    bank_code: "12030000"
+    bank_iban: DE3612030000101744404
+    firefly_url: https://myfirefly.iii
+    firefly_access_token: eXamPleAcCessT0kenSecur3
+    firefly_account_id: 29
+
+  
