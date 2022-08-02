@@ -48,7 +48,7 @@ export async function getTransactions(config: PinTanClientConfig, startDate: Dat
     }
     let statements: Statement[] = []
     try {
-        statements = await client.statements(accounts[0], startDate, endDate);
+        statements = await client.statements(account, startDate, endDate);
     } catch(err) {
         if(err instanceof TanRequiredError) {
             console.log(kleur.blue(err.challengeText))

@@ -117,8 +117,8 @@ void async function main() {
             const accounts = getAccountList()
             for(let account of accounts) {
                 await runAccount(account.bank_iban, startDate, endDate)
+                console.log(kleur.blue('======================================'))
             }
-            console.log(kleur.blue('======================================'))
         } else {
             await runAccount(args.iban, startDate, endDate)
         }
