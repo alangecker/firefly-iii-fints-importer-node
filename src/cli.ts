@@ -23,7 +23,7 @@ const args = parser.parse_args()
 
 
 async function runAccount(iban: string, startDate: Date, endDate: Date) {
-    const config = getConfigForIBAN(iban)
+    const config = getConfigForIBAN(iban, args.config)
 
     const fireflyAccounts = await getAccounts(config.firefly.url, config.firefly.token)
     const fireflyAccount = fireflyAccounts.find(a => parseInt(a.id) == config.firefly.accountId)
@@ -114,7 +114,7 @@ void async function main() {
             if(args.import_file) {
                 throw new Error(`importing a file to all accounts doesn't make any sense. please specify a single one with --iban`)
             }
-            const accounts = getAccountList()
+            const accounts = getAccountList(args.config)
             for(let account of accounts) {
                 await runAccount(account.bank_iban, startDate, endDate)
                 console.log(kleur.blue('======================================'))

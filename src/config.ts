@@ -27,8 +27,8 @@ function expectNumber(name: string, value: any) {
 }
 
 
-export function getAccountList(): any[] {
-    const file = fs.readFileSync(path.join(__dirname, '../configs/config.yaml'), 'utf-8')
+export function getAccountList(configFile: string): any[] {
+    const file = fs.readFileSync(configFile, 'utf-8')
     const config = YAML.parse(file)
     assert(config.accounts && Array.isArray(config.accounts), "expect accounts to be an array")
     
@@ -51,8 +51,8 @@ export function getAccountList(): any[] {
     return config.accounts
 }
 
-export function getConfigForIBAN(iban: string): IConfig {
-    const accounts = getAccountList()
+export function getConfigForIBAN(iban: string, configFile: string): IConfig {
+    const accounts = getAccountList(configFile)
     const account = accounts.find((a: any) => a.bank_iban == iban)
 
     if(!account) throw new Error(`no config found for IBAN '${iban}'`)
