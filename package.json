@@ -20,6 +20,7 @@
   },
   "scripts": {
     "cli": "ts-node src/cli.ts",
-    "postinstall": "cd node_modules/mt940-js && npm run build"
+    "postinstall": "cd node_modules/mt940-js && npm run build",
+    "build": "tsc"
   }
 }

@@ -32,3 +32,13 @@ yarn cli --config configs/myself.yaml --iban DE58430609671220123300
 # import transaction from a .mta file instead
 yarn cli --config configs/myself.yaml --iban DE58430609671220123300 --import_file transactions.mta
 ```
+
+### Speeding up script
+e.g. on a really slow pi (lovely greetings to [milan](https://tchncs.de/donate) :D)
+
+```bash
+yarn build
+
+# use this from now on
+node dist/cli.js --help
+```
