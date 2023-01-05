@@ -32,7 +32,7 @@ export function convertTransaction(tx: Transaction, ourAccountId: number): Firef
         destination_iban: dest.iban || null,
         sepa_ct_id: tx.descriptionStructured?.reference?.endToEndRef?.trim() || "",
         notes: tx.descriptionStructured?.reference?.divergingPrincipal || null,
-        description: tx.descriptionStructured?.reference?.text?.trim() || tx.descriptionStructured?.reference?.raw?.trim()
+        description: tx.descriptionStructured?.reference?.text?.trim() || tx.descriptionStructured?.reference?.raw?.trim() || '-'
     }
     
 }
